@@ -7,9 +7,16 @@ from test_framework.test_failure import TestFailure
 from test_framework.test_utils import enable_executor_hook
 
 
-def even_odd(A: List[int]) -> None:
-    # TODO - you fill in here.
-    return
+def even_odd(arr: List[int]) -> None:
+    left, right = 0, len(arr) - 1
+    while left != right:
+        if arr[left] % 2 == 0:
+            # even case
+            left += 1
+        else:
+            # odd case
+            arr[left], arr[right] = arr[right], arr[left]
+            right -= 1
 
 
 @enable_executor_hook

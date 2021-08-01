@@ -2,6 +2,16 @@ from typing import List
 
 from test_framework import generic_test
 
+"""
+def buy_and_sell_stock_once(prices: List[float]) -> float:
+    "brute force solution"
+    max_diff = 0
+    for i, each in enumerate(prices):
+        for j in range(i + 1, len(prices)):
+            max_diff = max(max_diff, prices[j] - prices[i])
+
+    return max_diff
+"""
 
 def buy_and_sell_stock_once(prices: List[float]) -> float:
     min_value_so_far = prices[0]

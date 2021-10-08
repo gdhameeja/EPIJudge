@@ -4,7 +4,18 @@ from test_framework import generic_test
 
 
 def next_permutation(perm: List[int]) -> List[int]:
-    # TODO - you fill in here.
+    perm = [str(x) for x in perm]
+    num = int(''.join(perm))
+    idx = len(perm) - 2
+    while True:
+        perm[-1], perm[idx] = perm[idx], perm[-1]
+        if int(''.join(perm)) > num:
+            return [int(x) for x in perm]
+        else:
+            # reset the entries
+            perm[-1], perm[idx] = perm[idx], perm[-1]
+            idx -= 1
+
     return []
 
 
